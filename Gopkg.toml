@@ -1,0 +1,5 @@
+[[constraint]]
+    name = "github.com/thiago18l/go_web_server"
+    version = "1.0.0"
+    branch = "main"
+    

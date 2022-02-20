@@ -27,7 +27,7 @@ FROM golang:1.16.6-alpine3.14 as APP_BUILDER
 
 WORKDIR /go/src/github.com/thiago18l/web-server
 
-COPY go.mod go.mod
+COPY go.* ./
 
 COPY ./src ./src
 RUN cd ./src && CGO_ENABLE=0 GOOS=linux go build -tags netgo -a -v -installsuffix cgo -o main .
@@ -39,5 +39,3 @@ EXPOSE 8080
 ENTRYPOINT [ "/tini", "--" ]
 CMD [ "./main" ]
 USER 999
-
-
